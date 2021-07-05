@@ -21,6 +21,7 @@ public class TestBase {
     public void setUpTest() {
         //BeforeTest will run only once before all test.
         //1. create object to set the location of the report
+        //1. create object to set the location of the report
         extentReports = new ExtentReports();
         //create a custom report in the current project.
         String filePath = System.getProperty("user.dir") + "/test-output/myprojectreport.html";
