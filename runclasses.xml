@@ -2,20 +2,20 @@
 <suite name="Suite1" verbose="1" >
     <test name="Positive Login Test" >
         <classes>
-            <class name="com.techproed.smoketest.Day11_PositiveTest" />
+            <class name="com.techproed.smoketest.KoalaResortPositifTest" />
             <class name="com.techproed.tests.Day10_TestAddressLoginTest" />
         </classes>
     </test>
 
     <test name="Negative Login Test">
         <classes>
-            <class name="com.techproed.smoketest.Day11_NegativeTest"/>
+            <class name="com.techproed.smoketest.KoalaResortNegatifTest"/>
         </classes>
     </test>
 
     <test name="Hotel Room Creating">
         <classes>
-            <class name="com.techproed.tests.Day12_HotelRoomCreation"/>
+            <class name="com.techproed.tests.HotelRoomCreationPozitif_Bekir"/>
         </classes>
     </test>
 </suite>

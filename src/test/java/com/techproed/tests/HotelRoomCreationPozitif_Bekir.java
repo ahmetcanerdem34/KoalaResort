@@ -1,8 +1,8 @@
 package com.techproed.tests;
 
-import com.techproed.pages.Day11_DefaultPage;
-import com.techproed.pages.Day11_LoginPage;
-import com.techproed.pages.Day12_HotelRoomPage;
+import com.techproed.pages.DefaultPage;
+import com.techproed.pages.LoginPage;
+import com.techproed.pages.HotelRoomPage;
 import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
 import org.openqa.selenium.WebElement;
@@ -14,20 +14,20 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Day12_HotelRoomCreation {
-    Day11_LoginPage loginPage;
-    Day11_DefaultPage defaultPage;
-    Day12_HotelRoomPage hotelRoomPage;
+public class HotelRoomCreationPozitif_Bekir {
+    LoginPage loginPage;
+    DefaultPage defaultPage;
+    HotelRoomPage hotelRoomPage;
     //Login teh application:
     @BeforeMethod
     public void setUp(){
-        loginPage= new Day11_LoginPage();
+        loginPage= new LoginPage();
         Driver.getDriver().get(ConfigReader.getProperty("application_login_url"));
         loginPage.username.sendKeys(ConfigReader.getProperty("admin_username"));
         loginPage.password.sendKeys(ConfigReader.getProperty("admin_password"));
         loginPage.loginButton.click();
 //        Checking if the login is successful
-        defaultPage=new Day11_DefaultPage();
+        defaultPage=new DefaultPage();
         Assert.assertTrue(defaultPage.addUserButton.isDisplayed());
 
     }
@@ -41,7 +41,7 @@ public class Day12_HotelRoomCreation {
         defaultPage.hotelRooms.click();
 
 //Click on Add Hotel Room
-        hotelRoomPage=new Day12_HotelRoomPage();
+        hotelRoomPage=new HotelRoomPage();
         hotelRoomPage.addHotelRoomButton.click();
 
 //Enter All required fieldd

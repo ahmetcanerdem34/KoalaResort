@@ -11,7 +11,7 @@
                 </methods>
             </class>
 <!--            EXCLUDING TEST METHODS FROM THE CLASS-->
-            <class name="com.techproed.smoketest.Day11_NegativeTest">
+            <class name="com.techproed.smoketest.KoalaResortNegatifTest">
                 <methods>
 <!--                    Running ALL except invalidID-->
                     <exclude name="invalidID"></exclude>

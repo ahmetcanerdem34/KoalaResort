@@ -1,24 +1,23 @@
 package com.techproed.smoketest;
 
-import com.techproed.pages.Day11_LoginPage;
+import com.techproed.pages.LoginPage;
 import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Day11_NegativeTest {
+public class KoalaResortNegatifTest {
 //        Then verify the error message includes “Wrong password”
 //        Test Data:
 //        Url: https://qa-environment.resortsline.com/Account/Logon
 //        user: admin
 //        pw: Techproed123
-    Day11_LoginPage loginPage;
+    LoginPage loginPage;
     @BeforeMethod
     public void setUp(){
-        loginPage= new Day11_LoginPage();
+        loginPage= new LoginPage();
         Driver.getDriver().get(ConfigReader.getProperty("application_login_url"));
         //We are on the LoginPage
     }
