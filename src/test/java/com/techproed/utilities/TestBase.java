@@ -34,9 +34,9 @@ public class TestBase {
         //WE CAN ADD CUSTOM INFO. NOT NECESSARY. JUST TO GIVE MORE INFORMATION TO THE USER OR TEAM
         extentReports.setSystemInfo("Environment", "Environment Name");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser"));
-        extentReports.setSystemInfo("Automation Engineer", "ENGINEER INFORMATION");
-        extentHtmlReporter.config().setDocumentTitle("resortsline Reports");
-        extentHtmlReporter.config().setReportName("resortsline Automation Reports");
+        extentReports.setSystemInfo("Automation Engineer", "Team-1");
+        extentHtmlReporter.config().setDocumentTitle("KoalaResort Reports");
+        extentHtmlReporter.config().setReportName("KoalaResort Automation Reports");
 
     }
 
