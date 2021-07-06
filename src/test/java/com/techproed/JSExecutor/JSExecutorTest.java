@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Day15_JSExecutorTest {
+public class JSExecutorTest {
 
     JavascriptExecutor je=(JavascriptExecutor) Driver.getDriver();
     @Test

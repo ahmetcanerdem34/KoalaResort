@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HW_RoomReservationPage {
-    public HW_RoomReservationPage(){
+public class RoomReservationPage {
+    public RoomReservationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

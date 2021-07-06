@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Day12_HotelRoomPage {
-    public Day12_HotelRoomPage(){
+public class HotelRoomPage {
+    public HotelRoomPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
