@@ -22,4 +22,5 @@ public class LoginPage {
     @FindBy(id="divMessageResult")
     public WebElement errorMessage;
 
+
 }
