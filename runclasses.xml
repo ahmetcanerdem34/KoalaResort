@@ -3,7 +3,7 @@
     <test name="Positive Login Test" >
         <classes>
             <class name="com.techproed.smoketest.KoalaResortPositifTest" />
-            <class name="com.techproed.tests.Day10_TestAddressLoginTest" />
+            <class name="com.techproed.tests.TestAddressLoginTest" />
         </classes>
     </test>
 
