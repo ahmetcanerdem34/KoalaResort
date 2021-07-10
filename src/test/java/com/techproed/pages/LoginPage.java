@@ -24,6 +24,29 @@ public class LoginPage {
     @FindBy(id="divMessageResult")
     public WebElement errorMessage;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     TestBase testBase = new TestBase();
     MainPage mainPage= new MainPage();
 
