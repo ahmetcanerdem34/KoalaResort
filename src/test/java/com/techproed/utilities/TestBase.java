@@ -2,6 +2,9 @@ package com.techproed.utilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.github.javafaker.Faker;
+import com.techproed.pages.Register;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -38,40 +41,20 @@ public class TestBase {
         extentHtmlReporter.config().setDocumentTitle("KoalaResort Reports");
         extentHtmlReporter.config().setReportName("KoalaResort Automation Reports");
 
+
+
     }
 
     @BeforeMethod(alwaysRun = true)
     public void setupMethod() {
-        //Creating Driver, and going to the application Login URL before each method
-        driver = Driver.getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get(ConfigReader.getProperty("application_login_url"));
-        extentTest=extentReports.createTest("resortsline extendReportsTest");
+        Driver.getDriver().get(ConfigReader.getProperty("kr_url"));
+
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDownMethod(ITestResult result) throws IOException {
-        //In AfterMethod, we are getting the screenshots and attaching the report when test fails
+    public void tearDownMethod(ITestResult result)  {
 
-        //When test case fails, then take the screenshot and attached the report
-        if (result.getStatus() == ITestResult.FAILURE) {
-            //getScreenshot is coming from ReusableMethods
-            String screenshotLocation = ReusableMethods.getScreenshot(result.getName());
-            extentTest.fail(result.getName());
-            //adding the screenshot in the html report
-            extentTest.addScreenCaptureFromPath(screenshotLocation);
-            //showing teh console error message on the html report
-            extentTest.fail(result.getThrowable());
-        } else if (result.getStatus() == ITestResult.SKIP) {
-            extentTest.skip("Test Case is skipped: " + result.getName());
-        }
         Driver.closeDriver();
     }
 
-    @AfterTest(alwaysRun = true)
-    public void tearDownTest() {
-        //Saving the report
-        extentReports.flush();
-    }
 }

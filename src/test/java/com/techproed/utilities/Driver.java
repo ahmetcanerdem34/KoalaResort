@@ -45,7 +45,7 @@ public class Driver {
             }
         }
 
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }//getDriver ends here
