@@ -32,7 +32,7 @@ public class TestBase {
         //3. attaching the html report to our custom report
         extentReports.attachReporter(extentHtmlReporter);
         //WE CAN ADD CUSTOM INFO. NOT NECESSARY. JUST TO GIVE MORE INFORMATION TO THE USER OR TEAM
-        extentReports.setSystemInfo("Environment", "Environment Name");
+        extentReports.setSystemInfo("Environment", "QA Environment");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser"));
         extentReports.setSystemInfo("Automation Engineer", "Team-1");
         extentHtmlReporter.config().setDocumentTitle("KoalaResort Reports");
@@ -46,8 +46,6 @@ public class TestBase {
         driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-
-
         driver.get(ConfigReader.getProperty("kr_url"));
         extentTest=extentReports.createTest("KoalaResort extendReportsTest");
 
