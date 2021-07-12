@@ -5,6 +5,7 @@ import com.techproed.pages.LoginPage;
 import com.techproed.pages.HotelRoomPage;
 import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
+import com.techproed.utilities.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -16,7 +17,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
-public class HotelListCreationNegatif_Merve {
+public class HotelListCreationNegatif_Merve extends TestBase {
 
 
 
