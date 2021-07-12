@@ -26,6 +26,30 @@ public class LoginPage {
     public WebElement errorMessage;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     TestBase testBase = new TestBase();
     MainPage mainPage = new MainPage();
 
@@ -35,6 +59,7 @@ public class LoginPage {
         username.sendKeys(ConfigReader.getProperty("kr_valid_username"));
         password.sendKeys(ConfigReader.getProperty("kr_valid_password"));
         loginButton.click();
+
     }
 
 

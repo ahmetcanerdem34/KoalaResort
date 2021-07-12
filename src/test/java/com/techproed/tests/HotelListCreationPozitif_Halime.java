@@ -39,16 +39,16 @@ public class HotelListCreationPozitif_Halime extends TestBase{
 
         Actions actions = new Actions(Driver.getDriver());
         actions.click(hotelListCreation.code)
-                .sendKeys(ConfigReader.getProperty("kr_code"))
+                .sendKeys(ConfigReader.getProperty("koala_code"))
                 .sendKeys(Keys.TAB)
-                .sendKeys(ConfigReader.getProperty("kr_customer_name"))
+                .sendKeys(ConfigReader.getProperty("koala_customer_name"))
                 .sendKeys(Keys.TAB)
-                .sendKeys(ConfigReader.getProperty("kr_customer_adress"))
+                .sendKeys(ConfigReader.getProperty("koala_customer_adress"))
                 .sendKeys(Keys.TAB)
-                .sendKeys(ConfigReader.getProperty("kr_customer_phone"))
+                .sendKeys(ConfigReader.getProperty("koala_customer_phone"))
                 .sendKeys(Keys.PAGE_DOWN)
                 .sendKeys(Keys.TAB)
-                .sendKeys(ConfigReader.getProperty("kr_customer_email"))
+                .sendKeys(ConfigReader.getProperty("koala_customer_email"))
                 .perform();
 
 
