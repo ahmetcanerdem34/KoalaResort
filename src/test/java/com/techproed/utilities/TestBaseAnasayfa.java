@@ -1,4 +1,5 @@
 package com.techproed.utilities;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -8,10 +9,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class TestBaseAnasayfa {
 
     protected WebDriver driver;
     protected static ExtentReports extentReports;
@@ -32,7 +34,7 @@ public class TestBase {
         //3. attaching the html report to our custom report
         extentReports.attachReporter(extentHtmlReporter);
         //WE CAN ADD CUSTOM INFO. NOT NECESSARY. JUST TO GIVE MORE INFORMATION TO THE USER OR TEAM
-        extentReports.setSystemInfo("Environment", "QA Environment");
+        extentReports.setSystemInfo("Environment", "Environment Name");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser"));
         extentReports.setSystemInfo("Automation Engineer", "Team-1");
         extentHtmlReporter.config().setDocumentTitle("KoalaResort Reports");
@@ -47,10 +49,8 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(ConfigReader.getProperty("kr_url"));
-        extentTest=extentReports.createTest("KoalaResort extendReportsTest");
-
+        extentTest=extentReports.createTest("resortsline extendReportsTest");
     }
-
 
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {

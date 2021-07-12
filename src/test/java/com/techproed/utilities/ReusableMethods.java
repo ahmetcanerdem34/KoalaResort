@@ -4,6 +4,8 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -179,6 +181,7 @@ public class ReusableMethods {
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
     }
+    //============================================================================================
 
 
 }
