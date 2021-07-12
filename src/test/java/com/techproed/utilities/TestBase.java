@@ -50,6 +50,7 @@ public class TestBase {
         extentTest=extentReports.createTest("KoalaResort extendReportsTest");
     }
 
+
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
         //In AfterMethod, we are getting the screenshots and attaching the report when test fails
