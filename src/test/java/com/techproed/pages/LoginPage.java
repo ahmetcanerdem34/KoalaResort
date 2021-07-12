@@ -49,15 +49,18 @@ public class LoginPage {
 
 
 
+
+
+
     TestBase testBase = new TestBase();
-    MainPage mainPage= new MainPage();
+    MainPage mainPage = new MainPage();
 
     public void koalaResortLogin(){
-        testBase.setupMethod(); // Driver.getDriver().get(ConfigReader.getProperty("kr_url"));
+        testBase.setupMethod();  // Driver.getDriver().get(ConfigReader.getProperty("kr_url"));
         mainPage.mainPageLoginLink.click();
         username.sendKeys(ConfigReader.getProperty("kr_valid_username"));
         password.sendKeys(ConfigReader.getProperty("kr_valid_password"));
-        loginButton.submit();
+        loginButton.click();
 
     }
 

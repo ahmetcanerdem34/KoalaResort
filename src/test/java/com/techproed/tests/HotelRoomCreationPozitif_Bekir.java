@@ -49,17 +49,17 @@ public class HotelRoomCreationPozitif_Bekir {
 //        2. Select object
         Select select=new Select(hotelRoomPage.hotelIdDropdown);
 //        3. selectBy...
-        select.selectByIndex(2);
-        hotelRoomPage.code.sendKeys("discount code");
-        hotelRoomPage.name.sendKeys("test name");
-        hotelRoomPage.location.sendKeys("Dallas");
-        hotelRoomPage.description.sendKeys("This is the best room for special guests");
-        hotelRoomPage.price.sendKeys("1000");
+        select.selectByVisibleText("Sheraton");
+        hotelRoomPage.code.sendKeys("101");
+        hotelRoomPage.name.sendKeys("Summer");
+        hotelRoomPage.location.sendKeys("B BLOK");
+        hotelRoomPage.description.sendKeys("This is the best price for special guests");
+        hotelRoomPage.price.sendKeys("400");
 
         Select roomDropdown=new Select( hotelRoomPage.roomTypeDropdown);
-        roomDropdown.selectByVisibleText("Studio");
+        roomDropdown.selectByVisibleText("King");
         hotelRoomPage.maxAdultCount.sendKeys("2");
-        hotelRoomPage.maxChildCount.sendKeys("5");
+        hotelRoomPage.maxChildCount.sendKeys("3");
         hotelRoomPage.isApprovedCheckbox.click();
         hotelRoomPage.saveButton.click();
 
