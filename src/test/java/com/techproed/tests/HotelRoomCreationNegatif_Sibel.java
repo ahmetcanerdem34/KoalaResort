@@ -25,9 +25,9 @@ public class HotelRoomCreationNegatif_Sibel extends TestBase{
     @BeforeMethod
     public void setUp(){
         loginPage= new LoginPage();
-        Driver.getDriver().get(ConfigReader.getProperty("application_login_url"));
-        loginPage.username.sendKeys(ConfigReader.getProperty("admin_username"));
-        loginPage.password.sendKeys(ConfigReader.getProperty("admin_password"));
+        Driver.getDriver().get(ConfigReader.getProperty("kr_login_url"));
+        loginPage.username.sendKeys(ConfigReader.getProperty("kr_valid_username"));
+        loginPage.password.sendKeys(ConfigReader.getProperty("kr_valid_password"));
         loginPage.loginButton.click();
 
     }
