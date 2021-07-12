@@ -1,6 +1,14 @@
 package com.techproed.tests;
 
 import com.techproed.pages.DefaultPage;
+
+import com.techproed.pages.HotelRoomPage;
+import com.techproed.pages.LoginPage;
+import com.techproed.utilities.ConfigReader;
+import com.techproed.utilities.Driver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
 import com.techproed.pages.LoginPage;
 import com.techproed.pages.HotelRoomPage;
 import com.techproed.utilities.ConfigReader;
@@ -12,12 +20,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import org.testng.annotations.*;
+
+
 
 public class HotelRoomCreationNegatif_Sibel extends TestBase{
     LoginPage loginPage;
@@ -122,3 +132,4 @@ extentTest=extentReports.createTest("Smoke Test","Negative Room Creation Test");
         return data;
     }
 }
+
