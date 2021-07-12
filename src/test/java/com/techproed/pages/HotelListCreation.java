@@ -1,7 +1,12 @@
 package com.techproed.pages;
 
+
 import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
+
+import com.techproed.utilities.Driver;
+import com.techproed.utilities.TestBase;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,11 +15,14 @@ public class HotelListCreation {
 
 
     public HotelListCreation() {
+
         PageFactory.initElements(Driver.getDriver(), this);
+
     }
 
     @FindBy(linkText = "Log in")
     public WebElement ilkLoginLinki;
+
     @FindBy(id = "UserName")
     public WebElement kullaniciAdiTextBox;
     @FindBy(id = "Password")
@@ -56,6 +64,28 @@ public class HotelListCreation {
 
     }
 
+
+
+
+
+    @FindBy(xpath = "//*[text()='OK']")
+    public WebElement OKButtonu;
+
+
+
+    @FindBy(xpath = "//label[@class='error']")
+    public WebElement errorMessage;
+
+    TestBase testBase = new TestBase();
+
+
+
+    public void hotelManangement(){
+        hotelManangement.click();
+    }
+    public void hotelList(){
+        hotelList.click();
+    }
 
 
 
