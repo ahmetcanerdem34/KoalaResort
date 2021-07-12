@@ -47,7 +47,7 @@ public class HotelListCreation {
     public WebElement yazi;
 
     public void login(){
-        ilkLoginLinki.click();
+     ilkLoginLinki.click();
      kullaniciAdiTextBox.sendKeys(ConfigReader.getProperty("admin_username"));
      passwordTextBox.sendKeys(ConfigReader.getProperty("admin_password"));
      loginButonu.click();
