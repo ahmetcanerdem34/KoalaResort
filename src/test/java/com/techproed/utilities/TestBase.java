@@ -47,7 +47,7 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(ConfigReader.getProperty("application_login_url"));
-        extentTest=extentReports.createTest("resortsline extendReportsTest");
+        extentTest=extentReports.createTest("Koala Resort extendReportsTest");
     }
 
     @AfterMethod(alwaysRun = true)
