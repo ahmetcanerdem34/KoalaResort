@@ -50,6 +50,8 @@ public class LoginPage {
 
 
 
+
+
     TestBase testBase = new TestBase();
     MainPage mainPage = new MainPage();
 
@@ -61,7 +63,5 @@ public class LoginPage {
         loginButton.click();
 
     }
-
-
 
 }
