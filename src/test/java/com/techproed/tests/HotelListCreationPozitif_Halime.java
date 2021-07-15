@@ -25,13 +25,20 @@ public class HotelListCreationPozitif_Halime extends TestBase{
 
     @BeforeMethod
     public void defaultLogin() throws InterruptedException {
+        extentTest = extentReports.createTest("Smoke", "Dogru datalarla giris yapma");
+        extentTest.info("Koala resort sayfasina gidildi");
+
         loginPage = new LoginPage();
         loginPage.koalaResortLogin();
+        extentTest.info("Login yapildi");
 
         hotelListCreation = new HotelListCreation();
         hotelListCreation.hotelManangement();
+        extentTest.info("Hotel Manangment butonuna tiklandi");
         hotelListCreation.hotelList();
+        extentTest.info("Hotel List'e tiklandi");
         hotelListCreation.addHotel.click();
+        extentTest.info("Add hotel butonuna tiklandi");
     }
 
     @Test
@@ -54,14 +61,19 @@ public class HotelListCreationPozitif_Halime extends TestBase{
 
         Select select = new Select(hotelListCreation.selectGroup);
         select.selectByVisibleText(ConfigReader.getProperty("kr_dropdown_value"));
+        extentTest.info("Dogru datalar girildi");
 
         Thread.sleep(2000);
 
         hotelListCreation.saveButton.click();
+        extentTest.info("Save butonuna tiklandi");
+
         Thread.sleep(2000);
         Assert.assertTrue(hotelListCreation.successfullYazisi.isDisplayed());
+        extentTest.info("Dogru datalarla basarili giris yapildigi test edildi");
     //  Assert.assertEquals(hotelListCreation.successfullYazisi.getText(),ConfigReader.getProperty("kr_successfull_yazisi"));
         hotelListCreation.OKButtonu.click();
+        extentTest.info("OK butonuna tiklandi");
 
     }
 
@@ -71,3 +83,6 @@ public class HotelListCreationPozitif_Halime extends TestBase{
 
     }
 }
+
+
+
