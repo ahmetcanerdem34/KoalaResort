@@ -28,7 +28,7 @@ public class KoalaResortNegatifTest {
 
         loginPage.username.sendKeys("admin");
         loginPage.password.sendKeys("Techproed123");
-        loginPage.loginButton.click();
+        loginPage.secondLoginButton.click();
 
 //        String errorMessageText=Driver.getDriver().findElement(By.id("divMessageResult")).getText();
 
@@ -49,7 +49,7 @@ public class KoalaResortNegatifTest {
 //        pw: Techproed123!
         loginPage.username.sendKeys("manager");//wrong id
         loginPage.password.sendKeys("Techproed123!");//correct pass
-        loginPage.loginButton.click();
+        loginPage.secondLoginButton.click();
 
         String errorMessageText=loginPage.errorMessage.getText();
 //        System.out.println(errorMessageText);
@@ -69,7 +69,7 @@ public class KoalaResortNegatifTest {
 
         loginPage.username.sendKeys("manager");//wrong id
         loginPage.password.sendKeys("Manage!");//correct pass
-        loginPage.loginButton.click();
+        loginPage.secondLoginButton.click();
         String errorMessageText=loginPage.errorMessage.getText();
         Assert.assertTrue(errorMessageText.contains("Username or password is incorrect, please correct them and try again"));
 
