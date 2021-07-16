@@ -5,6 +5,7 @@ import com.techproed.pages.LoginPage;
 import com.techproed.pages.HotelRoomPage;
 import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
+import com.techproed.utilities.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -14,13 +15,17 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class HotelRoomCreationPozitif_Bekir {
+public class HotelRoomCreationPozitif_Bekir extends TestBase{
+
     LoginPage loginPage;
     DefaultPage defaultPage;
     HotelRoomPage hotelRoomPage;
-    //Login teh application:
+
+    TestBase testBase;
+
     @BeforeMethod
     public void setUp(){
+
         loginPage= new LoginPage();
         Driver.getDriver().get(ConfigReader.getProperty("application_login_url"));
         loginPage.username.sendKeys(ConfigReader.getProperty("admin_username"));
@@ -34,49 +39,51 @@ public class HotelRoomCreationPozitif_Bekir {
 
     @Test
     public void hotelRoomCreation() throws InterruptedException {
-//Click on Hotel Management
+        extentTest=extentReports.createTest("Smoke", "Gecerli bilgilerle room creation pozitif test");
+        extentTest.info("Koala Resort Hotel Room Creation sayfasina gecis yapildi");
+    //Click on Hotel Management
         defaultPage.hotelManagement.click();
 
-//Click on Hotel Rooms
+    //Click on Hotel Rooms
         defaultPage.hotelRooms.click();
 
-//Click on Add Hotel Room
+    //Click on Add Hotel Room
         hotelRoomPage=new HotelRoomPage();
         hotelRoomPage.addHotelRoomButton.click();
 
-//Enter All required fieldd
-//        WebElement -> done in page class
-//        2. Select object
+    //Enter All required fieldd
+
+    // Select object
+
         Select select=new Select(hotelRoomPage.hotelIdDropdown);
-//        3. selectBy...
-        select.selectByIndex(2);
-        hotelRoomPage.code.sendKeys("discount code");
-        hotelRoomPage.name.sendKeys("test name");
-        hotelRoomPage.location.sendKeys("Dallas");
-        hotelRoomPage.description.sendKeys("This is the best room for special guests");
-        hotelRoomPage.price.sendKeys("1000");
+    //  3. selectBy...
+        select.selectByVisibleText("Sheraton");
+        hotelRoomPage.code.sendKeys("101");
+        hotelRoomPage.name.sendKeys("Summer");
+        hotelRoomPage.location.sendKeys("B BLOK");
+        hotelRoomPage.description.sendKeys("This is the best price for special guests");
+        hotelRoomPage.price.sendKeys("400");
 
         Select roomDropdown=new Select( hotelRoomPage.roomTypeDropdown);
-        roomDropdown.selectByVisibleText("Studio");
+        roomDropdown.selectByVisibleText("King");
         hotelRoomPage.maxAdultCount.sendKeys("2");
-        hotelRoomPage.maxChildCount.sendKeys("5");
+        hotelRoomPage.maxChildCount.sendKeys("3");
         hotelRoomPage.isApprovedCheckbox.click();
         hotelRoomPage.saveButton.click();
+        extentTest.info("Koala Resort Hotel Room Creation sayfasina dogru datalarla giris yapildi");
 
+    //   Verify the message: HotelRoom was inserted successfully
+    //   1. HARD WAIT
+    //   Thread.sleep(1000);// not recommended
+    //   Assert.assertEquals(hotelRoomPage.popUp.getText(),"HotelRoom was inserted successfully");
 
-//Verify the message: HotelRoom was inserted successfully
-//        1. HARD WAIT
-//        Thread.sleep(1000);// not recommended
-
-//       Assert.assertEquals(hotelRoomPage.popUp.getText(),"HotelRoom was inserted successfully");
-
-//        2. USE EXPLICIT WAIT TO SOLVE THE WAIT ISSUE:
+    //   2. USE EXPLICIT WAIT TO SOLVE THE WAIT ISSUE:
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
         WebElement popupElement=wait.until(ExpectedConditions.visibilityOf(hotelRoomPage.popUp));
         Assert.assertEquals(popupElement.getText(),"HotelRoom was inserted successfully");
-//Click OK
+    //   Click OK
         hotelRoomPage.okButton.click();
-
+        extentTest.pass("Koala Resort Hotel Room Creation sayfasina dogru datalarla basarili giris yapildigi dogrulandi");
     }
 
     @AfterMethod

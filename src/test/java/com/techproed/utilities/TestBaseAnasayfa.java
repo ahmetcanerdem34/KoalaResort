@@ -1,20 +1,19 @@
 package com.techproed.utilities;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.github.javafaker.Faker;
-import com.techproed.pages.Register;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class TestBaseAnasayfa {
 
     protected WebDriver driver;
     protected static ExtentReports extentReports;
@@ -27,7 +26,7 @@ public class TestBase {
         //1. create object to set the location of the report
         extentReports = new ExtentReports();
         //create a custom report in the current project.
-        String filePath = System.getProperty("user.dir") + "/test-output/Rapor.html";
+        String filePath = System.getProperty("user.dir") + "/test-output/myprojectreport.html";
         //Folder name = test-output, File name = report.html
         //String filePath = System.getProperty("user.dir") + "\\test-output\\report.html";//THIS IS FOR WINDOWS USER
         //2. creating the report with the path we created
@@ -35,36 +34,46 @@ public class TestBase {
         //3. attaching the html report to our custom report
         extentReports.attachReporter(extentHtmlReporter);
         //WE CAN ADD CUSTOM INFO. NOT NECESSARY. JUST TO GIVE MORE INFORMATION TO THE USER OR TEAM
-        extentReports.setSystemInfo("Environment", "QA Environment");
+        extentReports.setSystemInfo("Environment", "Environment Name");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser"));
         extentReports.setSystemInfo("Automation Engineer", "Team-1");
         extentHtmlReporter.config().setDocumentTitle("KoalaResort Reports");
         extentHtmlReporter.config().setReportName("KoalaResort Automation Reports");
 
-
-
     }
 
     @BeforeMethod(alwaysRun = true)
     public void setupMethod() {
-<<<<<<< HEAD
-        Driver.getDriver().get(ConfigReader.getProperty("kr_url"));
-=======
         //Creating Driver, and going to the application Login URL before each method
         driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(ConfigReader.getProperty("kr_url"));
-        extentTest=extentReports.createTest("KoalaResort extendReportsTest");
->>>>>>> master
-
+        extentTest=extentReports.createTest("resortsline extendReportsTest");
     }
 
-
     @AfterMethod(alwaysRun = true)
-    public void tearDownMethod(ITestResult result)  {
+    public void tearDownMethod(ITestResult result) throws IOException {
+        //In AfterMethod, we are getting the screenshots and attaching the report when test fails
 
+        //When test case fails, then take the screenshot and attached the report
+        if (result.getStatus() == ITestResult.FAILURE) {
+            //getScreenshot is coming from ReusableMethods
+            String screenshotLocation = ReusableMethods.getScreenshot(result.getName());
+            extentTest.fail(result.getName());
+            //adding the screenshot in the html report
+            extentTest.addScreenCaptureFromPath(screenshotLocation);
+            //showing teh console error message on the html report
+            extentTest.fail(result.getThrowable());
+        } else if (result.getStatus() == ITestResult.SKIP) {
+            extentTest.skip("Test Case is skipped: " + result.getName());
+        }
         Driver.closeDriver();
     }
 
+    @AfterTest(alwaysRun = true)
+    public void tearDownTest() {
+        //Saving the report
+        extentReports.flush();
+    }
 }
