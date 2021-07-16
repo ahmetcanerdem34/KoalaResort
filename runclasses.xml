@@ -1,0 +1,58 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" verbose="1" >
+    <test name="Positive Create Hotel Room Test" >
+        <classes>
+            <class name="com.techproed.tests.HotelRoomCreationPozitif_Bekir" />
+        </classes>
+    </test>
+    <test name="Negative create Hotel List Test">
+        <classes>
+            <class name="com.techproed.tests.HotelListCreationNegatif_Merve"/>
+        </classes>
+    </test>
+    <test name="Positive create Hotel List Test">
+        <classes>
+            <class name="com.techproed.tests.HotelListCreationPozitif_Halime"/>
+        </classes>
+    </test>
+    <test name="Negative Create new Account Test">
+        <classes>
+            <class name="com.techproed.tests.CreateNewAccountNegatif_Jahan"/>
+        </classes>
+    </test>
+    <test name="Positive Create Room Reservation Test" >
+        <classes>
+            <class name="com.techproed.tests.RoomReservationPozitif_Abbas" />
+        </classes>
+    </test>
+    <test name="Positive Create new Account Test" >
+        <classes>
+            <class name="com.techproed.tests.CreateNewAccountPozitif_Ahmet" />
+        </classes>
+    </test>
+    <test name="Positive Login Test" >
+        <classes>
+            <class name="com.techproed.tests.LoginPozitif_Ahmet" />
+        </classes>
+    </test>
+    <test name="Negative Create Hotel Room  Test" >
+        <classes>
+            <class name="com.techproed.tests.HotelRoomCreationNegatif_Sibel" />
+        </classes>
+    </test>
+    <test name="Negative Create Room Resarvation Test" >
+        <classes>
+            <class name="com.techproed.tests.RoomReservationNegatif_Furkan" />
+        </classes>
+    </test>
+    <test name="Main Page Header Test" >
+        <classes>
+            <class name="com.techproed.tests.MainPageHeader_Islamm" />
+        </classes>
+    </test>
+    <test name="Main Page Check Test" >
+        <classes>
+            <class name="com.techproed.tests.MainPageCheck_Islam" />
+        </classes>
+    </test>
+</suite>
