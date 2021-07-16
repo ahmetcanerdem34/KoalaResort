@@ -20,6 +20,8 @@ public class LoginPage {
     public WebElement errorMessage;
     @FindBy(xpath = "(//a[@class='dropdown-toggle'])[1]")
     public WebElement manager;
+    @FindBy(xpath="(//div//ul/li)[8]")
+    public WebElement errorMessage2;
     TestBase testBase = new TestBase();
     MainPage mainPage = new MainPage();
     public void koalaResortLogin(){
