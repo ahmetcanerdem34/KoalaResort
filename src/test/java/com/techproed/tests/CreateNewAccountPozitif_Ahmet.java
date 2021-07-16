@@ -20,7 +20,6 @@ public class CreateNewAccountPozitif_Ahmet extends TestBase {
     @Test
     public void creatNewRegistration() throws InterruptedException {
         extentTest=extentReports.createTest("Smoke", "Gecerli bilgilerle room creation pozitif test");
-
         register.firstLoginButton.click();
         extentTest.info("Koala Resort Hotel sayfasinda login button tiklandi");
         js.executeScript("javascript:window.scrollBy(250,350)");
@@ -58,4 +57,3 @@ public class CreateNewAccountPozitif_Ahmet extends TestBase {
         extentTest.pass("Koala Resort Hotel sayfasinda dogru bilgilerle new account olusturuldugu test edildi");
     }
 }
-
