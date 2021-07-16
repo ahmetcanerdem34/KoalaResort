@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+
 public class HotelRoomCreationNegatif_Sibel extends TestBase{
     LoginPage loginPage;
     DefaultPage defaultPage;

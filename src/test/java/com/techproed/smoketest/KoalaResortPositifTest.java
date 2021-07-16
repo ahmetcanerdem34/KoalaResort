@@ -29,7 +29,7 @@ public class KoalaResortPositifTest {
         loginPage=new LoginPage();
         loginPage.username.sendKeys(ConfigReader.getProperty("admin_username"));
         loginPage.password.sendKeys(ConfigReader.getProperty("admin_password"));
-        loginPage.loginButton.click();
+        loginPage.secondLoginButton.click();
 
 //        find a core object in the default login page And verify if the log in successful
 //        WebElement addUserButton=Driver.getDriver().findElement(By.xpath("//span[@class='hidden-480']"));
