@@ -28,7 +28,8 @@ public class LoginPage {
     @FindBy(xpath = "(//a[@class='dropdown-toggle'])[1]")
     public WebElement manager;
 
-
+    @FindBy(xpath="(//div//ul/li)[8]")
+    public WebElement errorMessage2;
 
 
 
