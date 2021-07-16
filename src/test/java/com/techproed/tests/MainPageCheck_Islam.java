@@ -6,7 +6,7 @@ import com.techproed.utilities.TestBase;
 import com.techproed.utilities.TestBaseAnasayfa;
 import org.testng.annotations.Test;
 
-public class MainPageCheck_Islam extends TestBaseAnasayfa {
+public class MainPageCheck_Islam extends TestBase {
     MainPage mainPage;
 
     @Test
