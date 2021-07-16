@@ -1,5 +1,4 @@
 package com.techproed.tests;
-
 import com.techproed.pages.Register;
 import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
@@ -11,16 +10,14 @@ import org.testng.Assert;
 import org.testng.DataProviderHolder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 public class CreateNewAccountNegatif_Jahan extends TestBase {
     Register register;
-TestBase testBase;
-@BeforeMethod
-public void setUp(){
-    register=new Register();
-    register.loginPage();
-}
-
+    TestBase testBase;
+    @BeforeMethod
+    public void setUp(){
+        register=new Register();
+        register.loginPage();
+    }
     @Test
     public void userName() throws InterruptedException {
         testBase=new TestBase();
@@ -34,13 +31,10 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB +
                 ConfigReader.getProperty("drivingLicense") + Keys.TAB);
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress") + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -49,14 +43,9 @@ public void setUp(){
         String actual = register.userNameHata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
-
     }
-
-
     @Test
     public void password() throws InterruptedException {
-
         extentTest.info("Koala Resort hotel sayfasinda yalnis verilerle account olusturuluyor");
         ReusableMethods.waitFor(5);
         register.userName.sendKeys(ConfigReader.getProperty("userName") + Keys.TAB +
@@ -66,13 +55,10 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB +
                 ConfigReader.getProperty("drivingLicense") + Keys.TAB);
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress") + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -81,12 +67,10 @@ public void setUp(){
         String actual = register.passwordHata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
-
     @Test
     public void email() throws InterruptedException {
-       // register.loginPage();
+        // register.loginPage();
         extentTest.info("Koala Resort hotel sayfasinda yalnis verilerle account olusturuluyor");
         ReusableMethods.waitFor(5);
         register.userName.sendKeys(ConfigReader.getProperty("userName") + Keys.TAB +
@@ -96,13 +80,10 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB +
                 ConfigReader.getProperty("drivingLicense") + Keys.TAB);
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress") + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -111,12 +92,10 @@ public void setUp(){
         String actual = register.emailHata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
-
     @Test
     public void fullName() throws InterruptedException {
-       // register.loginPage();
+        // register.loginPage();
         extentTest.info("Koala Resort hotel sayfasinda yalnis verilerle account olusturuluyor");
         ReusableMethods.waitFor(5);
         register.userName.sendKeys(ConfigReader.getProperty("userName") + Keys.TAB +
@@ -126,13 +105,10 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB +
                 ConfigReader.getProperty("drivingLicense") + Keys.TAB);
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress") + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -141,12 +117,10 @@ public void setUp(){
         String actual = register.hata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
-
     @Test
     public void phone() throws InterruptedException {
-       // register.loginPage();
+        // register.loginPage();
         extentTest.info("Koala Resort hotel sayfasinda yalnis verilerle account olusturuluyor");
         ReusableMethods.waitFor(5);
         register.userName.sendKeys(ConfigReader.getProperty("userName") + Keys.TAB +
@@ -156,13 +130,10 @@ public void setUp(){
         register.phoneNo.sendKeys("" + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB +
                 ConfigReader.getProperty("drivingLicense") + Keys.TAB);
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress") + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -171,12 +142,10 @@ public void setUp(){
         String actual = register.phoneHata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
-
     @Test
     public void ssn() throws InterruptedException {
-       // register.loginPage();
+        // register.loginPage();
         extentTest.info("Koala Resort hotel sayfasinda yalnis verilerle account olusturuluyor");
         ReusableMethods.waitFor(5);
         register.userName.sendKeys(ConfigReader.getProperty("userName") + Keys.TAB +
@@ -186,13 +155,10 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber"));
         register.ssn.sendKeys("" + Keys.TAB +
                 ConfigReader.getProperty("drivingLicense") + Keys.TAB);
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress") + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -201,9 +167,7 @@ public void setUp(){
         String actual = register.hata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
-
     @Test
     public void license() throws InterruptedException {
         //register.loginPage();
@@ -216,13 +180,10 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB);
         register.driverLicense.sendKeys("");
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress") + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -231,12 +192,10 @@ public void setUp(){
         String actual = register.hata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
-
     @Test
     public void country() throws InterruptedException {
-       // register.loginPage();
+        // register.loginPage();
         extentTest.info("Koala Resort hotel sayfasinda yalnis verilerle account olusturuluyor");
         ReusableMethods.waitFor(5);
         register.userName.sendKeys(ConfigReader.getProperty("userName") + Keys.TAB +
@@ -246,10 +205,8 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB +
                 ConfigReader.getProperty("drivingLicense") + Keys.TAB + Keys.TAB);
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress") + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -258,12 +215,10 @@ public void setUp(){
         String actual = register.countryHata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
-
     @Test
     public void state() throws InterruptedException {
-       // register.loginPage();
+        // register.loginPage();
         extentTest.info("Koala Resort hotel sayfasinda yalnis verilerle account olusturuluyor");
         ReusableMethods.waitFor(5);
         register.userName.sendKeys(ConfigReader.getProperty("userName") + Keys.TAB +
@@ -273,10 +228,8 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB+
                 ConfigReader.getProperty("drivingLicense"));
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress") + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -285,11 +238,10 @@ public void setUp(){
         String actual = register.stateHata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
     @Test
     public void adress() throws InterruptedException {
-       // register.loginPage();
+        // register.loginPage();
         extentTest.info("Koala Resort hotel sayfasinda yalnis verilerle account olusturuluyor");
         ReusableMethods.waitFor(5);
         register.userName.sendKeys(ConfigReader.getProperty("userName") + Keys.TAB +
@@ -299,13 +251,10 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB+
                 ConfigReader.getProperty("drivingLicense"));
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys("" + Keys.TAB +
                 ConfigReader.getProperty("workingSector") + Keys.TAB +
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
@@ -314,11 +263,10 @@ public void setUp(){
         String actual = register.hata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
     @Test
     public void workingSector() throws InterruptedException {
-       // register.loginPage();
+        // register.loginPage();
         extentTest.info("Koala Resort hotel sayfasinda yalnis verilerle account olusturuluyor");
         ReusableMethods.waitFor(5);
         register.userName.sendKeys(ConfigReader.getProperty("userName") + Keys.TAB +
@@ -328,22 +276,18 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB+
                 ConfigReader.getProperty("drivingLicense"));
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress")+Keys.TAB);
-               register.workingSector.sendKeys(""+Keys.TAB+
+        register.workingSector.sendKeys(""+Keys.TAB+
                 ConfigReader.getProperty("birthDay") + Keys.TAB);
         register.save.click();
         String expected = "This field is required.";
         String actual = register.hata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
-
     }
     @Test
     public void birthDay() throws InterruptedException {
@@ -357,22 +301,18 @@ public void setUp(){
                 ConfigReader.getProperty("phoneNumber") + Keys.TAB +
                 ConfigReader.getProperty("ssn") + Keys.TAB+
                 ConfigReader.getProperty("drivingLicense"));
-
         Select select = new Select(register.country);
         select.selectByVisibleText(ConfigReader.getProperty("country"));
-
         Select select1 = new Select(register.state);
         select1.selectByVisibleText(ConfigReader.getProperty("state"));
-
         register.adress.sendKeys(ConfigReader.getProperty("adress")+Keys.TAB+
-        ConfigReader.getProperty("workingSector")+Keys.TAB);
-               register.birthDate.sendKeys("");
+                ConfigReader.getProperty("workingSector")+Keys.TAB);
+        register.birthDate.sendKeys("");
         register.save.click();
         String expected = "This field is required.";
         String actual = register.hata.getText();
         Assert.assertEquals(actual, expected);
         extentTest.pass("Koala Resort hotel sayfasinda account olusturmak icin yanlis verilerle giris yapilamadi");
         //Driver.closeDriver();
-
     }
 }
