@@ -25,7 +25,11 @@ public class LoginPage {
     @FindBy(id="divMessageResult")
     public WebElement errorMessage;
 
+    @FindBy(xpath = "(//a[@class='dropdown-toggle'])[1]")
+    public WebElement manager;
 
+    @FindBy(xpath="(//div//ul/li)[8]")
+    public WebElement errorMessage2;
 
 
 
@@ -63,5 +67,39 @@ public class LoginPage {
     }
 
 
+    public void loginTest() {
+        //1-Kullanıcı Koala Resort ana sayfasına gider
+//        Driver.getDriver().get(ConfigReader.getProperty("kr_url"));
+//        //2-Ana sayfada sag ust kosede login butonuna tıklar
+//        mainPage.mainPageLoginLink.click();
+//        //3-Username text box' a gecerli bir username girer
+//        username.sendKeys(ConfigReader.getProperty("kr_valid_username"));
+//        //4-Password text box'a gecerli bir password girer
+//        password.sendKeys(ConfigReader.getProperty("kr_valid_password"));
+//        //5-Login butonuna tıklar
+//        loginButton.click();
+        testBase.setupMethod();  // Driver.getDriver().get(ConfigReader.getProperty("kr_url"));
+        mainPage.mainPageLoginLink.click();
+        username.sendKeys(ConfigReader.getProperty("kr_valid_username"));
+        password.sendKeys(ConfigReader.getProperty("kr_valid_password"));
+        loginButton.click();
 
-}
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
