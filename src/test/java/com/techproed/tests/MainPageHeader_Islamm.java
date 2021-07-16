@@ -4,7 +4,6 @@ import com.techproed.pages.MainPage;
 import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
 import com.techproed.utilities.TestBase;
-import com.techproed.utilities.TestBaseAnasayfa;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;

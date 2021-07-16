@@ -3,7 +3,7 @@ package com.techproed.tests;
 import com.techproed.pages.MainPage;
 import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.TestBase;
-import com.techproed.utilities.TestBaseAnasayfa;
+import com.techproed.utilities.TestBase;
 import org.testng.annotations.Test;
 
 public class MainPageCheck_Islam extends TestBase {
