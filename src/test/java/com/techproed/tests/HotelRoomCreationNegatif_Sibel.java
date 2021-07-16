@@ -7,7 +7,6 @@ import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
 import org.openqa.selenium.support.ui.Select;
 import com.techproed.utilities.TestBase;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -42,7 +41,7 @@ public class HotelRoomCreationNegatif_Sibel extends TestBase{
         defaultPage.hotelManagement.click();
 
         //Click on Hotel Rooms
-           defaultPage.hotelRooms.click();
+        defaultPage.hotelRooms.click();
         //Click on Add Hotel Room
         hotelRoomPage = new HotelRoomPage();
         hotelRoomPage.addHotelRoomButton.click();
@@ -60,7 +59,7 @@ public class HotelRoomCreationNegatif_Sibel extends TestBase{
         hotelRoomPage.maxAdultCount.sendKeys(maxAdult);
         hotelRoomPage.maxChildCount.sendKeys(maxChildren);
         hotelRoomPage.isApprovedCheckbox.click();
-      //  Thread.sleep(2000);
+      //Thread.sleep(2000);
         hotelRoomPage.saveButton.click();
 
         extentTest.info("Her bir negatif testcase icin gecersiz datalar girildi");
