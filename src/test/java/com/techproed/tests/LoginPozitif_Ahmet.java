@@ -1,8 +1,6 @@
 package com.techproed.tests;
 
 import com.techproed.pages.LoginPage;
-import com.techproed.pages.MainPage;
-import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
