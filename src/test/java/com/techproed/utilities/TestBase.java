@@ -47,16 +47,16 @@ public class TestBase {
 
     @BeforeMethod(alwaysRun = true)
     public void setupMethod() {
-<<<<<<< HEAD
+
         Driver.getDriver().get(ConfigReader.getProperty("kr_url"));
-=======
+
         //Creating Driver, and going to the application Login URL before each method
         driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(ConfigReader.getProperty("kr_url"));
         extentTest=extentReports.createTest("KoalaResort extendReportsTest");
->>>>>>> master
+
 
     }
 
