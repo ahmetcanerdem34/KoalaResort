@@ -56,14 +56,15 @@ public class HotelRoomCreationPozitif_Bekir extends TestBase{
 
     @Test
     public void hotelRoomCreation() throws InterruptedException {
+
         extentTest=extentReports.createTest("Smoke", "Gecerli bilgilerle room creation pozitif test");
         extentTest.info("Koala Resort Hotel Room Creation sayfasina gecis yapildi");
+
+
     //Click on Hotel Management
         defaultPage.hotelManagement.click();
-
     //Click on Hotel Rooms
         defaultPage.hotelRooms.click();
-
     //Click on Add Hotel Room
         hotelRoomPage=new HotelRoomPage();
         hotelRoomPage.addHotelRoomButton.click();
@@ -71,7 +72,6 @@ public class HotelRoomCreationPozitif_Bekir extends TestBase{
 
 
     // Select object
-
         Select select=new Select(hotelRoomPage.hotelIdDropdown);
     //  3. selectBy...
         select.selectByVisibleText("Sheraton");
