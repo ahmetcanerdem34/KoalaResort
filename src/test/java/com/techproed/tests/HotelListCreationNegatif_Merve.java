@@ -19,16 +19,15 @@ import com.techproed.utilities.TestBase;
 
 
 public class HotelListCreationNegatif_Merve extends TestBase {
-
-
-
-
-
     LoginPage loginPage;
     DefaultPage defaultPage;
     HotelListCreation hotelListCreation;
     @BeforeMethod
     public void setUp(){
+
+        extentTest = extentReports.createTest("Smoke", "Yanlis datalarla giris yapma");
+        extentTest.info("Koala resort sayfasina gidildi");
+
         loginPage = new LoginPage();
         loginPage.koalaResortLogin();
         hotelListCreation = new HotelListCreation();
@@ -52,9 +51,11 @@ public class HotelListCreationNegatif_Merve extends TestBase {
         groupDropdown.selectByVisibleText(group);
         Thread.sleep(2000);
         hotelListCreation.saveButton.click();
+        extentTest.info("save yapildi");
         Thread.sleep(2000);
         //  Assert.assertFalse(hotelListCreation.successfullYazisi.isDisplayed());
         Assert.assertTrue(hotelListCreation.errorMessage.isDisplayed());
+        extentTest.info("error mesaj alindi");
     }
     @DataProvider
     public Object[][] yanlisDatalarlaHotelOlusturma() {

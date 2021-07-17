@@ -5,6 +5,7 @@ import com.techproed.pages.LoginPage;
 import com.techproed.pages.HotelRoomPage;
 import com.techproed.utilities.ConfigReader;
 import com.techproed.utilities.Driver;
+import com.techproed.utilities.ReusableMethods;
 import com.techproed.utilities.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,10 +28,26 @@ public class HotelRoomCreationPozitif_Bekir extends TestBase{
     public void setUp(){
 
         loginPage= new LoginPage();
-        Driver.getDriver().get(ConfigReader.getProperty("kr_url"));
+        Driver.getDriver().get(ConfigReader.getProperty("kr_login_url"));
+        testBase = new TestBase();
+        testBase.setUpTest();
+        loginPage.loginButton.click();
         loginPage.username.sendKeys(ConfigReader.getProperty("kr_valid_username"));
         loginPage.password.sendKeys(ConfigReader.getProperty("kr_valid_password"));
         loginPage.loginButton.click();
+
+//        loginPage= new LoginPage();
+//
+//        Driver.getDriver().get(ConfigReader.getProperty("kr_url"));
+//        loginPage.username.sendKeys(ConfigReader.getProperty("kr_valid_username"));
+//        loginPage.password.sendKeys(ConfigReader.getProperty("kr_valid_password"));
+//        loginPage.loginButton.click();
+//
+//        Driver.getDriver().get(ConfigReader.getProperty("application_login_url"));
+//        loginPage.username.sendKeys(ConfigReader.getProperty("admin_username"));
+//        loginPage.password.sendKeys(ConfigReader.getProperty("admin_password"));
+//        loginPage.secondLoginButton.click();
+//
 //        Checking if the login is successful
         defaultPage=new DefaultPage();
         Assert.assertTrue(defaultPage.addUserButton.isDisplayed());
@@ -51,7 +68,7 @@ public class HotelRoomCreationPozitif_Bekir extends TestBase{
         hotelRoomPage=new HotelRoomPage();
         hotelRoomPage.addHotelRoomButton.click();
 
-    //Enter All required fieldd
+
 
     // Select object
 
@@ -68,6 +85,7 @@ public class HotelRoomCreationPozitif_Bekir extends TestBase{
         roomDropdown.selectByVisibleText("King");
         hotelRoomPage.maxAdultCount.sendKeys("2");
         hotelRoomPage.maxChildCount.sendKeys("3");
+        ReusableMethods.waitFor(3);
         hotelRoomPage.isApprovedCheckbox.click();
         hotelRoomPage.saveButton.click();
         extentTest.info("Koala Resort Hotel Room Creation sayfasina dogru datalarla giris yapildi");

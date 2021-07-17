@@ -14,13 +14,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.TreeMap;
 public class CreateNewAccountPozitif_Ahmet extends TestBase {
+
     Register register =new Register();
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     Faker faker=new Faker();
     @Test
     public void creatNewRegistration() throws InterruptedException {
         extentTest=extentReports.createTest("Smoke", "Gecerli bilgilerle room creation pozitif test");
-
         register.firstLoginButton.click();
         extentTest.info("Koala Resort Hotel sayfasinda login button tiklandi");
         js.executeScript("javascript:window.scrollBy(250,350)");
@@ -58,4 +58,3 @@ public class CreateNewAccountPozitif_Ahmet extends TestBase {
         extentTest.pass("Koala Resort Hotel sayfasinda dogru bilgilerle new account olusturuldugu test edildi");
     }
 }
-

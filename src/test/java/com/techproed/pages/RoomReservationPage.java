@@ -107,6 +107,7 @@ public class RoomReservationPage {
 
     }
 
-
+    @FindBy (xpath = "//label[@for='ContactEmail']")
+    public WebElement contactEmailErrorMessage;
 
 }
