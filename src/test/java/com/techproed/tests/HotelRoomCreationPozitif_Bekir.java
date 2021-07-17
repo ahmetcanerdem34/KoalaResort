@@ -30,7 +30,7 @@ public class HotelRoomCreationPozitif_Bekir extends TestBase{
         Driver.getDriver().get(ConfigReader.getProperty("application_login_url"));
         loginPage.username.sendKeys(ConfigReader.getProperty("admin_username"));
         loginPage.password.sendKeys(ConfigReader.getProperty("admin_password"));
-        loginPage.secondLoginButton.click();
+       // loginPage.secondLoginButton.click();
 //        Checking if the login is successful
         defaultPage=new DefaultPage();
         Assert.assertTrue(defaultPage.addUserButton.isDisplayed());
