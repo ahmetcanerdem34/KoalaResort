@@ -14,6 +14,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.TreeMap;
 public class CreateNewAccountPozitif_Ahmet extends TestBase {
+
     Register register =new Register();
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     Faker faker=new Faker();

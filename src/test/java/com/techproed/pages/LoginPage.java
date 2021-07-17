@@ -8,8 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 public class LoginPage {
     public LoginPage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    @FindBy(xpath = "(//a[@class='nav-link'])[7]")
+    public WebElement login;
+
     @FindBy(id="UserName")
     public WebElement username;
     @FindBy(id="Password")
@@ -22,6 +26,10 @@ public class LoginPage {
     public WebElement manager;
     @FindBy(xpath="(//div//ul/li)[8]")
     public WebElement errorMessage2;
+
+    @FindBy(id = "btnSubmit")
+    public WebElement secondLoginButton;
+
     TestBase testBase = new TestBase();
     MainPage mainPage = new MainPage();
     public void koalaResortLogin(){
