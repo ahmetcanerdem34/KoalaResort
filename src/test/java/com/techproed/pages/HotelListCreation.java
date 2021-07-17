@@ -14,6 +14,9 @@ import org.openqa.selenium.support.PageFactory;
 public class HotelListCreation {
 
 
+
+
+
     public HotelListCreation() {
 
         PageFactory.initElements(Driver.getDriver(), this);
@@ -86,6 +89,7 @@ public class HotelListCreation {
     public void hotelList(){
         hotelList.click();
     }
+
 
 
 
